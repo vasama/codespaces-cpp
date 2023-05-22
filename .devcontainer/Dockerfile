@@ -15,6 +15,7 @@ RUN apt-get update && \
 		gdb \
 		lldb \
 		llvm \
+		ninja-build \
 		python3-pip \
 		valgrind \
 		&& \
