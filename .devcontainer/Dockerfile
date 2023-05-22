@@ -15,11 +15,12 @@ RUN apt-get update && \
 		gdb \
 		lldb \
 		llvm \
+		python3-pip \
 		valgrind \
 		&& \
 	apt-get autoremove -y && apt-get clean -y && rm -rf /var/lib/apt/lists/*
 
-COPY requirements.txt /tmp/pip-tmp/requirements.txt
+COPY python-requirements.txt /tmp/python-requirements.txt
 RUN python3 -m pip install --upgrade pip setuptools && \
-	pip3 install --no-input --no-cache-dir -r /tmp/pip-tmp/requirements.txt && \
-	rm /tmp/pip-tmp/requirements.txt
+	pip3 install --no-input --no-cache-dir -r /tmp/python-requirements.txt && \
+	rm /tmp/python-requirements.txt
