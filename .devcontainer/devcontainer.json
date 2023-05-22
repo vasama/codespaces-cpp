@@ -1,0 +1,28 @@
+{
+	"name": "cpp",
+
+	"build": {
+		"dockerfile": "./Dockerfile",
+		"context": "."
+	},
+
+	"features": {
+		"ghcr.io/devcontainers/features/git:1": {
+			"version": "latest",
+			"ppa": "false"
+		}
+	},
+
+	"capAdd": ["SYS_PTRACE"],
+	"securityOpt": ["seccomp=unconfined"],
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-vscode.cpptools",
+				"ms-vscode.cmake-tools"
+			]
+		}
+	},
+
+	"remoteUser": "vscode"
+}
